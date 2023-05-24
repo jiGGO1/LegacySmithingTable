@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.jiggo.smithing.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "SmithingTableBlockMixin",
+    "ItemCombinerMenuAccessor",
+    "SmithingTransformRecipeMixin",
+    "LegacySmithingMenuMixin",
+    "ItemCombinerMenuMixin"
+  ],
+  "client": [
+    "SmithingScreenMixin",
+    "LegacySmithingScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

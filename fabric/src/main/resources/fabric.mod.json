@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "legacy_smithing_table",
+  "version": "${version}",
+  "name": "Legacy Smithing Table",
+  "description": "This mod allows player to use the old-school smithing mechanism.",
+  "authors": [
+    "ji_GGO"
+  ],
+  "contact": {
+  },
+  "license": "LGPLv3",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.jiggo.smithing.fabric.LegacySmithingTableFabric"
+    ]
+  },
+  "mixins": [
+    "legacy_smithing_table.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.19",
+    "fabric-api": "*",
+    "minecraft": ">=1.19.4"
+  }
+}

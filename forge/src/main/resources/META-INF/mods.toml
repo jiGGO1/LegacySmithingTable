@@ -1,0 +1,11 @@
+modLoader = "javafml"
+loaderVersion = "[45,)"
+license = "LGPLv3"
+
+[[mods]]
+modId = "legacy_smithing_table"
+version = "${version}"
+displayName = "Legacy Smithing Table"
+authors = "ji_GGO"
+description = "This mod allows player to use the old-school smithing mechanism."
+logoFile = "icon.png"
