@@ -22,7 +22,7 @@ public class NetworkPacketsUtilsImpl {
     }
 
     public static void send(Player player, ResourceLocation id) {
-        PacketOpenSmithing packet = new PacketOpenSmithing(id);
+        PacketOpenSmithing packet = new PacketOpenSmithing(id, player.getUUID());
         FriendlyByteBuf buf = PacketByteBufs.create();
         packet.toBytes(buf);
         ClientPlayNetworking.send(BUTTON_ID, buf);

@@ -23,7 +23,7 @@ public class NetworkPacketsUtilsImpl {
     }
 
     public static void send(Player player, ResourceLocation id) {
-        INSTANCE.sendToServer(new PacketOpenSmithing(id));
+        INSTANCE.sendToServer(new PacketOpenSmithing(id, player.getUUID()));
     }
 
     public static void packet(PacketOpenSmithing packet, ServerPlayer player) {

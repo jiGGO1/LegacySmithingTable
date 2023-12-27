@@ -9,15 +9,20 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.level.Level;
 
+import java.util.UUID;
+
 public class PacketOpenSmithing {
 
     private ResourceLocation id;
 
+    private UUID uuid;
+
     public PacketOpenSmithing() {
     }
 
-    public PacketOpenSmithing(ResourceLocation id) {
+    public PacketOpenSmithing(ResourceLocation id, UUID uuid) {
         this.id = id;
+        this.uuid = uuid;
     }
 
     public PacketOpenSmithing(FriendlyByteBuf buffer) {
@@ -26,14 +31,17 @@ public class PacketOpenSmithing {
 
     public void fromBytes(FriendlyByteBuf buf) {
         this.id = buf.readResourceLocation();
+        this.uuid = buf.readUUID();
     }
 
     public void toBytes(FriendlyByteBuf buf) {
         buf.writeResourceLocation(this.id);
+        buf.writeUUID(this.uuid);
     }
 
     public static void packet(PacketOpenSmithing packet, Player player) {
-        final Level level = player.getLevel();
+        if (!player.getUUID().equals(packet.uuid)) return;
+        final Level level = player.level;
         final BlockPos pos = PacketOpenSmithing.getBlockPos(player.containerMenu);
         if (pos != null && level.getBlockState(pos).getBlock() instanceof FutureSmithingTable table) {
             table.openMenu(player, pos, packet.id);

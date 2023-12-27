@@ -15,6 +15,15 @@
   "entrypoints": {
     "main": [
       "com.jiggo.smithing.fabric.LegacySmithingTableFabric"
+    ],
+    "jei_mod_plugin": [
+      "com.jiggo.smithing.compat.jei.JEISmithingPlugin"
+    ],
+    "rei_client": [
+      "com.jiggo.smithing.compat.rei.REISmithingClientPlugin"
+    ],
+    "rei_common": [
+      "com.jiggo.smithing.compat.rei.REISmithingPlugin"
     ]
   },
   "mixins": [

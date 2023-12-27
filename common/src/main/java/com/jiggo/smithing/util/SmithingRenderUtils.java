@@ -6,7 +6,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.GuiComponent;
 import net.minecraft.resources.ResourceLocation;
 
-public class SmithingRenderUtils {
+public final class SmithingRenderUtils {
 
     public static final ResourceLocation SMITHING = new ResourceLocation(LegacySmithingTable.MODID, "textures/gui/smithing.png");
     public static final ResourceLocation LEGACY_SMITHING = new ResourceLocation(LegacySmithingTable.MODID, "textures/gui/legacy_smithing.png");
